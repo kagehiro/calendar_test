@@ -11,7 +11,6 @@ $white: #ffffff;
 $gray: #efefef;
 
 $base-green: #f7fff0;
-
 $green: #3CB371;
 $light-green:#3cdcca;
 
@@ -34,16 +33,4 @@ $pc: 'min-width:768px';
 // ------------------------
 @import "mixin";
 @import "reset";//初期化
-
-// テンプレート
-@import "template/header";
-@import "template/footer";
-@import "template/application";
-@import "template/registration";
-
-//どのページでも使う基本設定
-@import "contents";
-
-// 個別ページ
-@import "pages/anshin-for-company";//あんしん定額プランの案内LP
-@import "pages/index";//トップページ
+@import "main"

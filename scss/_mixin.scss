@@ -2,88 +2,14 @@
 
 //flexのデフォルト設定
 @mixin flex {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
-}
-
-//背景画像を中央配置
-@mixin backimg {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-//ボタン
-@mixin btn {
-  color:$white;
-  display:inline-block;
-  text-decoration:none;
-  text-align: center;
-  border-radius: 30px;
-  padding:10px 30px;
-  padding-right:30px;
-  position:relative;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#47d36d+1,3cb371+100,47d36d+100 */
-  background: #47d36d; /* Old browsers */
-  background: -moz-linear-gradient(top, #47d36d 1%, #3cb371 100%, #47d36d 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #47d36d 1%,#3cb371 100%,#47d36d 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #47d36d 1%,#3cb371 100%,#47d36d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#47d36d', endColorstr='#47d36d',GradientType=0 ); /* IE6-9 */
-  &:hover{
-    display:inline-block;
-    padding:10px 30px;
-    padding-right:30px;
-    border-radius: 30px;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9af252+0,47d36d+100,3cb371+100,47d36d+100 */
-    background: #9af252; /* Old browsers */
-    background: -moz-linear-gradient(top, #9af252 0%, #47d36d 100%, #3cb371 100%, #47d36d 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #9af252 0%,#47d36d 100%,#3cb371 100%,#47d36d 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #9af252 0%,#47d36d 100%,#3cb371 100%,#47d36d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9af252', endColorstr='#47d36d',GradientType=0 ); /* IE6-9 */
-  }
-  &:after{
-    content:'＞';
-    position:absolute;
-    display:block;
-    right:5px;
-    top:10px;
-    color:$white;
-  }
-}
-
-@mixin btn-orange {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffbd26+0,fe8224+99 */
-  background: #ffbd26; /* Old browsers */
-  background: -moz-linear-gradient(top, #ffbd26 0%, #fe8224 99%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #ffbd26 0%,#fe8224 99%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #ffbd26 0%,#fe8224 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffbd26', endColorstr='#fe8224',GradientType=0 ); /* IE6-9 */
-  &:hover{
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2e724+0,ffbd26+99 */
-    background: #f2e724; /* Old browsers */
-    background: -moz-linear-gradient(top, #f2e724 0%, #ffbd26 99%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #f2e724 0%,#ffbd26 99%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #f2e724 0%,#ffbd26 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2e724', endColorstr='#ffbd26',GradientType=0 ); /* IE6-9 */
-  }
-}
-
-
-//:befoerもしくは:afterでの重ね掛け
-@mixin after {
-  position:absolute;
-  display:block;
-  content:'';
-  left:0;
-  right:0;
-  bottom:0;
-  top:0;
 }
 
 //最大幅設定
 @mixin inbox {
-  width:90%;
-  max-width:$max-width;
+  width: 90%;
+  max-width: $max-width;
   margin:0 auto;
   padding: 40px 0;
 }

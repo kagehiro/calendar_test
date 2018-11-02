@@ -13,7 +13,7 @@
   <p>テストカレンダー</p>
   <p id="todate"></p>
 
-  <table class="calender_table">
+  <table class="calendar_table">
     <tr>
       <th>日</th>
       <th>月</th>
@@ -27,6 +27,6 @@
 
 
 
-  <script type="text/javascript" src="../js/calender.js"></script>
+  <script type="text/javascript" src="../js/calendar.js"></script>
 </body>
 </html>

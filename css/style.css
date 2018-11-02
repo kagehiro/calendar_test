@@ -18,4 +18,37 @@ li, dt, dd {
   margin: 0;
   padding: 0; }
 
+a {
+  text-decoration: none; }
+  a:hover {
+    opacity: 0.8; }
+
+.calendar_table {
+  width: 20%;
+  min-width: 300px;
+  margin: 0 auto;
+  text-align: center; }
+  .calendar_table th {
+    font-size: 24px; }
+    .calendar_table th:first-child {
+      color: #ff0000; }
+    .calendar_table th:last-child {
+      color: #0000ff; }
+  .calendar_table td {
+    font-size: 22px; }
+    .calendar_table td a {
+      color: #696969; }
+    .calendar_table td:first-child {
+      background-color: rgba(255, 0, 0, 0.7); }
+      .calendar_table td:first-child a {
+        color: #ffffff; }
+    .calendar_table td:last-child {
+      background-color: rgba(0, 0, 255, 0.7); }
+      .calendar_table td:last-child a {
+        color: #ffffff; }
+  .calendar_table .now_day {
+    border-radius: 50%;
+    color: #ffffff;
+    background-color: rgba(60, 179, 113, 0.7); }
+
 /*# sourceMappingURL=style.css.map */

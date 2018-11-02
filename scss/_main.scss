@@ -1,1 +1,40 @@
 @charset "UTF-8";
+
+.calendar_table{
+  width: 20%;
+  min-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  th{
+    font-size: 24px;
+    &:first-child{
+      color: $red;
+    }
+    &:last-child{
+      color: $blue;
+    }
+  }
+  td{
+    font-size: 22px;
+    a{
+      color: $black;
+    }
+    &:first-child{
+      background-color: rgba($red,0.7);
+      a{
+        color: $white;
+      }
+    }
+    &:last-child{
+      background-color: rgba($blue,0.7);
+      a{
+        color: $white;
+      }
+    }
+  }
+  .now_day{
+    border-radius: 50%;
+    color: $white;
+    background-color: rgba($green,0.7);
+  }
+}

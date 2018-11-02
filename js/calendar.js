@@ -1,13 +1,25 @@
 
-//現在日時表示
+//今日の日付表示
 function toDateShow() {
-  let toDate = new Date();
-  let year = toDate.getFullYear();
-  let month = toDate.getMonth() + 1;
-  let date = toDate.getDate();
-  let day = toDate.getDay();
+  let now = new Date();
+  let year = now.getFullYear();
+  let month = now.getMonth() + 1;
+  let date = now.getDate();
+  let day = now.getDay();
 
-  let htmlShow = year + '/' + month + '/' + date + '(' + day + ')';
+  let weekDays = [
+    '日',
+    '月',
+    '火',
+    '水',
+    '木',
+    '金',
+    '土'
+  ];
+
+  let weekDay = weekDays[day];
+
+  let htmlShow = year + '/' + month + '/' + date + '(' + weekDay + ')';
 
   let target_p = document.getElementById("todate");
   target_p.innerHTML = htmlShow;

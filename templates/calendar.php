@@ -1,58 +1,7 @@
 <?php
-class CalendarObj{
-
-  private $year;  //年
-  private $month; //月
-
-  //コンストラクタ。インスタンス生成時の初期値用
-  public function __construct($y,$m){
-    $this->year = $y;
-    $this->month = $m;
-  }
-
-  //カレンダーの行を作る
-  public function createRows(){
-    //月の最終日を$lastDayにセット
-    $lastDay = date("j", mktime(0, 0, 0, $this->month + 1, 0, $this->year));
-    $rows = array();
-    $row = self::initRow();    //最初に日付部分の土台
-
-    //1ヶ月分の日付ループ
-    for($i = 1; $i <= $lastDay; $i++){
-      //$iの数だけ曜日（のindex0～6）を$dateにセット
-      $date = date("w", mktime(0, 0, 0, $this->month, $i, $this->year));
-      $row[$date] = $i;
-
-      //土曜日もしくは月の最終日の場合
-      if($date == 6 || $i == $lastDay){
-        //$rowsに$rowをセット
-        $rows []= $row;
-        //$rowsに$row一行を加えたらinitRow()で初期化する
-        $row = self::initRow();
-      }
-    }
-    return $rows; //最終日まで追加された配列$rowsを返す
-  }
-
-  //年月表示用
-  public function getInfo(){
-    return $this->year."年".$this->month."月";
-  }
-
-  //日付の入らない空白部分を埋める（日付部分の土台）
-  private static function initRow(){
-    $emptyArray = array();
-    for($i = 0; $i <= 6; $i++){
-      $emptyArray[] = "　";
-    }
-    return $emptyArray;
-  }
-
-}
-
-$year = date("Y");   //年
-$month = date("n");  //月
-$newCalendar = new CalendarObj($year,$month);
+require(__DIR__."/system.php");
+//インスタンスを立てる
+$newCalendar = new CalendarObj();
 
 ?>
 
@@ -68,9 +17,14 @@ $newCalendar = new CalendarObj($year,$month);
 
 <body>
 
-  <p>テストカレンダー</p>
+  <h1 class="title">テストカレンダー</h1>
   <p id="todate"></p>
-  <!-- <p><?php echo $newCalendar->getInfo(); ?></p> -->
+  <a href="#"></a>
+  <p class="show_year_month">
+      <a href="http://localhost/calendar_work/templates/calendar.php?<?php echo $newCalendar->getUrlPrevMonth() ?>">前月</a>
+      <?php echo $newCalendar->getYear(); ?>年<?php echo $newCalendar->getMonth(); ?>月
+      <a href="http://localhost/calendar_work/templates/calendar.php?<?php echo $newCalendar->getUrlNextMonth() ?>">次月</a>
+  </p>
 
   <table class="calendar_table">
     <tr>
@@ -84,12 +38,18 @@ $newCalendar = new CalendarObj($year,$month);
     </tr>
 
     <?php
+    $today = date("j");
+    $thisYear = $newCalendar->getYear();
+    $thisMonth = $newCalendar->getMonth();
+
       foreach ($newCalendar->createRows() as $row){
         echo "<tr>";
         for($i = 0; $i <= 6; $i++){
-          if($i == $newCalendar->getInfo()){
+          if($row[$i] == $today && $thisYear == date("Y") && $thisMonth == date("m")){
             echo "<td class=\"now_day\"><a href=\"#\">".$row[$i]."</a></td>";
-          } else {
+        } elseif($row[$i] == " "){
+            echo "<td> </td>";
+        } else {
             echo "<td><a href=\"#\">".$row[$i]."</a></td>";
           }
         }

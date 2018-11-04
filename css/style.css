@@ -23,6 +23,16 @@ a {
   a:hover {
     opacity: 0.8; }
 
+.title {
+  margin: 0 auto;
+  text-align: center; }
+
+.show_year_month {
+  width: 20%;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px #353535 solid; }
+
 .calendar_table {
   width: 20%;
   min-width: 300px;

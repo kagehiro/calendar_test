@@ -1,0 +1,2 @@
+# PHP noticeエラーを非表示に
+php_value error_reporting 30711\

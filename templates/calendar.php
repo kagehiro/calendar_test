@@ -17,8 +17,6 @@ $newCalendar = new CalendarObj();
 
 <body>
 
-  <h1 class="title">テストカレンダー</h1>
-  <a href="#"></a>
   <p class="show_year_month">
       <a href="http://localhost/calendar_work/templates/calendar.php?<?php echo $newCalendar->getUrlPrevMonth() ?>">&lt;&lt;前月</a>
       <span>
@@ -39,8 +37,6 @@ $newCalendar = new CalendarObj();
       <th>土</th>
     </tr>
 
-    <div id="modal_main">モーダルウィンドウ</div>
-
     <?php
     $today = date("j");
     $thisYear = $newCalendar->getYear();
@@ -50,11 +46,11 @@ $newCalendar = new CalendarObj();
         echo "<tr>";
         for($i = 0; $i <= 6; $i++){
           if($row[$i] == $today && $thisYear == date("Y") && $thisMonth == date("m")){
-            echo "<td><a class=\"modal_memo\"><span class=\"now_day\">".$row[$i]."</span></a></td>";
+            echo "<td><a class=\"modal_btn\"><span class=\"now_day\">".$row[$i]."</span></a></td>";
         } elseif($row[$i] == " "){
             echo "<td> </td>";
         } else {
-            echo "<td><a class=\"modal_memo\"><span>".$row[$i]."</span></a></td>";
+            echo "<td><a class=\"modal_btn\"><span>".$row[$i]."</span></a></td>";
           }
         }
         echo "</tr>";
@@ -65,6 +61,17 @@ $newCalendar = new CalendarObj();
   <p class="todate_box">
     今日：<span id="todate"></span>
   </p>
+
+  <div class="overlay" id="overlay"></div>
+  <div class="modal" id="modal">
+    <a class="close_btn"></a>
+    <span class="modal_date">
+      <?php echo $newCalendar->getYear(); ?>年
+      <?php echo $newCalendar->getMonth(); ?>月
+      <?php echo $newCalendar->getDay(); ?>日
+    </span>
+    <textarea class="modal_text" name="memo_area" placeholder="ここに予定を書く"></textarea>
+  </div>
 
 
 

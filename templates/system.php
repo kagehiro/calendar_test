@@ -3,13 +3,18 @@ class CalendarObj{
 
   private $year;  //年
   private $month; //月
+  private $day;   //日
 
-  //getter（ゲッタ。年月の出力用。）
+
+  //getter（ゲッタ。年・月・日の出力用。）
   public function getYear(){
     return $this->year;
   }
   public function getMonth(){
     return $this->month;
+  }
+  public function getDay(){
+    return $this->day;
   }
 
   //次月・前月移動用
@@ -45,6 +50,7 @@ class CalendarObj{
     $req = $_REQUEST;
     $year = $req['year'];
     $month = $req['month'];
+    $day = $req['day'];
 
     if(preg_match("/[12]\d{3}/", $year) == true && preg_match("/[0-9]{2}/", $month) == true){
       $this->year = $year;
@@ -77,11 +83,6 @@ class CalendarObj{
       }
     }
     return $rows; //最終日まで追加された配列$rowsを返す
-  }
-
-  //年月表示用
-  public function getInfo(){
-    return $this->year."年".$this->month."月";
   }
 
   //空白部分を埋める（1週間分。曜日単位。）

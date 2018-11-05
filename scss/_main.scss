@@ -1,22 +1,41 @@
 @charset "UTF-8";
 
 .title{
-  margin: 0 auto;
+  margin: 10px auto;
   text-align: center;
 }
+
 .show_year_month{
+  @include flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 300px;
+  margin: 0 auto 10px;
+  padding: 5px 15px;
+  border: 3px $green solid;
+  border-radius: 3px;
+  background-color: $base-green;
+  span{
+    font-size: 24px;
+    font-weight: bold;
+    color: $green;
+  }
+  a{
+    color: $green;
+  }
+}
+
+.calendar_table{
   width: 20%;
+  height: 350px;
+  min-width: 350px;
   margin: 0 auto;
   text-align: center;
   border: 1px $dark-black solid;
-}
-.calendar_table{
-  width: 20%;
-  min-width: 300px;
-  margin: 0 auto;
-  text-align: center;
+  border-radius: 2px 2px 2px 2px;
   th{
     font-size: 24px;
+    border: 1px $dark-black solid;
     &:first-child{
       color: $red;
     }
@@ -25,26 +44,81 @@
     }
   }
   td{
+    text-align: center;
+    padding: 0;
     font-size: 22px;
-    a{
+    border: 1px $dark-black solid;
+    .modal_memo{
+      display: table;
+      width: 100%;
+      height: 100%;
+      margin: 0;
       color: $black;
+      &:hover{
+        background-color: rgba($orange, 0.3);
+      }
+      span{
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+      }
+      .now_day{
+        border: 1.5px $green dotted;
+        border-radius: 50%;
+      }
     }
     &:first-child{
       background-color: rgba($red,0.7);
-      a{
+      .modal_memo{
         color: $white;
+        &:hover{
+          background-color: rgba($blue, 0.3);
+        }
       }
     }
     &:last-child{
       background-color: rgba($blue,0.7);
-      a{
+      .modal_memo{
         color: $white;
+        &:hover{
+          background-color: rgba($red, 0.3);
+        }
       }
     }
   }
-  .now_day{
-    border-radius: 50%;
-    color: $white;
-    background-color: rgba($green,0.7);
-  }
+}
+
+.todate_box{
+  text-align: center;
+  margin: 10px auto;
+}
+#todate{
+  vertical-align: top;
+  padding: 5px 0 5px 5px;
+  font-weight: bold;
+  background-color: rgba($orange, 0.5);
+}
+
+//モーダル
+#modal_main {
+  display: none;
+　width: 300px;
+　height: 300px;
+　margin: 0;
+　padding: 0;
+　background-color: $green;
+　color: $red;
+　position: fixed;
+　z-index: 100;
+}
+//モーダル背景
+.modal_bg {
+　display: none;
+　width: 100%;
+　height: 100%;
+　background-color: rgba($black, 0.8);
+　position: fixed;
+　top: 0;
+　left: 0;
+　z-index: 50;
 }

@@ -1,8 +1,9 @@
+@charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
 html, body {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 500;
-  color: #696969;
+  color: #353535;
   background: #ffffff; }
 
 body, div, p, h1, h1, h3, h4, ul, figure, dl, ul, ol, blockquote, span {
@@ -23,42 +24,110 @@ a {
   a:hover {
     opacity: 0.8; }
 
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden; }
+
 .title {
-  margin: 0 auto;
+  margin: 10px auto;
   text-align: center; }
 
 .show_year_month {
-  width: 20%;
-  margin: 0 auto;
-  text-align: center;
-  border: 1px #353535 solid; }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 300px;
+  margin: 0 auto 10px;
+  padding: 5px 15px;
+  border: 3px #008000 solid;
+  border-radius: 3px;
+  background-color: #f7fff0; }
+  .show_year_month span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #008000; }
+  .show_year_month a {
+    color: #008000; }
 
 .calendar_table {
   width: 20%;
-  min-width: 300px;
+  height: 350px;
+  min-width: 350px;
   margin: 0 auto;
-  text-align: center; }
+  text-align: center;
+  border: 1px #000000 solid;
+  border-radius: 2px 2px 2px 2px; }
   .calendar_table th {
-    font-size: 24px; }
+    font-size: 24px;
+    border: 1px #000000 solid; }
     .calendar_table th:first-child {
       color: #ff0000; }
     .calendar_table th:last-child {
       color: #0000ff; }
   .calendar_table td {
-    font-size: 22px; }
-    .calendar_table td a {
-      color: #696969; }
+    text-align: center;
+    padding: 0;
+    font-size: 22px;
+    border: 1px #000000 solid; }
+    .calendar_table td .modal_memo {
+      display: table;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      color: #353535; }
+      .calendar_table td .modal_memo:hover {
+        background-color: rgba(254, 130, 36, 0.3); }
+      .calendar_table td .modal_memo span {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center; }
+      .calendar_table td .modal_memo .now_day {
+        border: 1.5px #008000 dotted;
+        border-radius: 50%; }
     .calendar_table td:first-child {
       background-color: rgba(255, 0, 0, 0.7); }
-      .calendar_table td:first-child a {
+      .calendar_table td:first-child .modal_memo {
         color: #ffffff; }
+        .calendar_table td:first-child .modal_memo:hover {
+          background-color: rgba(0, 0, 255, 0.3); }
     .calendar_table td:last-child {
       background-color: rgba(0, 0, 255, 0.7); }
-      .calendar_table td:last-child a {
+      .calendar_table td:last-child .modal_memo {
         color: #ffffff; }
-  .calendar_table .now_day {
-    border-radius: 50%;
-    color: #ffffff;
-    background-color: rgba(60, 179, 113, 0.7); }
+        .calendar_table td:last-child .modal_memo:hover {
+          background-color: rgba(255, 0, 0, 0.3); }
+
+.todate_box {
+  text-align: center;
+  margin: 10px auto; }
+
+#todate {
+  vertical-align: top;
+  padding: 5px 0 5px 5px;
+  font-weight: bold;
+  background-color: rgba(254, 130, 36, 0.5); }
+
+#modal_main {
+  display: none;
+  　width: 300px;
+  　height: 300px;
+  　margin: 0;
+  　padding: 0;
+  　background-color: #008000;
+  　color: #ff0000;
+  　position: fixed;
+  　z-index: 100; }
+
+.modal_bg {
+  　display: none;
+  　width: 100%;
+  　height: 100%;
+  　background-color: rgba(53, 53, 53, 0.8);
+  　position: fixed;
+  　top: 0;
+  　left: 0;
+  　z-index: 50; }
 
 /*# sourceMappingURL=style.css.map */

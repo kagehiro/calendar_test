@@ -18,12 +18,14 @@ $newCalendar = new CalendarObj();
 <body>
 
   <h1 class="title">テストカレンダー</h1>
-  <p id="todate"></p>
   <a href="#"></a>
   <p class="show_year_month">
-      <a href="http://localhost/calendar_work/templates/calendar.php?<?php echo $newCalendar->getUrlPrevMonth() ?>">前月</a>
-      <?php echo $newCalendar->getYear(); ?>年<?php echo $newCalendar->getMonth(); ?>月
-      <a href="http://localhost/calendar_work/templates/calendar.php?<?php echo $newCalendar->getUrlNextMonth() ?>">次月</a>
+      <a href="http://localhost/calendar_work/templates/calendar.php?<?php echo $newCalendar->getUrlPrevMonth() ?>">&lt;&lt;前月</a>
+      <span>
+        <?php echo $newCalendar->getYear(); ?>年
+        <?php echo $newCalendar->getMonth(); ?>月
+      </span>
+      <a href="http://localhost/calendar_work/templates/calendar.php?<?php echo $newCalendar->getUrlNextMonth() ?>">次月&gt;&gt;</a>
   </p>
 
   <table class="calendar_table">
@@ -37,6 +39,8 @@ $newCalendar = new CalendarObj();
       <th>土</th>
     </tr>
 
+    <div id="modal_main">モーダルウィンドウ</div>
+
     <?php
     $today = date("j");
     $thisYear = $newCalendar->getYear();
@@ -46,11 +50,11 @@ $newCalendar = new CalendarObj();
         echo "<tr>";
         for($i = 0; $i <= 6; $i++){
           if($row[$i] == $today && $thisYear == date("Y") && $thisMonth == date("m")){
-            echo "<td class=\"now_day\"><a href=\"#\">".$row[$i]."</a></td>";
+            echo "<td><a class=\"modal_memo\"><span class=\"now_day\">".$row[$i]."</span></a></td>";
         } elseif($row[$i] == " "){
             echo "<td> </td>";
         } else {
-            echo "<td><a href=\"#\">".$row[$i]."</a></td>";
+            echo "<td><a class=\"modal_memo\"><span>".$row[$i]."</span></a></td>";
           }
         }
         echo "</tr>";
@@ -58,9 +62,14 @@ $newCalendar = new CalendarObj();
     ?>
 
   </table>
+  <p class="todate_box">
+    今日：<span id="todate"></span>
+  </p>
 
 
 
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
   <script type="text/javascript" src="../js/calendar.js"></script>
 </body>
 </html>

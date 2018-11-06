@@ -63,7 +63,7 @@ table {
       color: #0000ff; }
   .calendar_table td {
     text-align: center;
-    padding: 0;
+    padding: 6px 2px;
     font-size: 22px;
     border: 1px #000000 solid; }
     .calendar_table td .modal_btn {
@@ -73,13 +73,13 @@ table {
       margin: 0;
       color: #353535; }
       .calendar_table td .modal_btn:hover {
-        background-color: rgba(254, 130, 36, 0.3); }
+        background-color: rgba(255, 165, 0, 0.3); }
       .calendar_table td .modal_btn span {
         display: table-cell;
         vertical-align: middle;
         text-align: center; }
       .calendar_table td .modal_btn .now_day {
-        border: 1.5px #008000 dotted;
+        border: 1.5px #008000 solid;
         border-radius: 50%; }
     .calendar_table td:first-child {
       background-color: rgba(255, 0, 0, 0.7); }
@@ -102,7 +102,7 @@ table {
   vertical-align: top;
   padding: 5px 0 5px 5px;
   font-weight: bold;
-  background-color: rgba(254, 130, 36, 0.5); }
+  background-color: rgba(255, 165, 0, 0.5); }
 
 .modal {
   display: none;
@@ -110,19 +110,20 @@ table {
   top: 25%;
   left: 0;
   right: 0;
-  max-width: 300px;
+  max-width: 270px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 20px;
   background: #ffffff;
   border-radius: 5px;
-  box-shadow: 5px 5px 10px rgba(53, 53, 53, 0.3); }
+  box-shadow: 5px 5px 10px rgba(53, 53, 53, 0.3);
+  z-index: 10; }
 
 .modal_date {
   display: block; }
 
 .modal_text {
-  width: 290px;
-  max-width: 290px;
+  width: 260px;
+  max-width: 260px;
   height: 200px; }
 
 .close_btn {
@@ -173,7 +174,15 @@ table {
   -webkit-transform: rotate(-45deg); }
 
 .close_btn:hover {
-  background-color: #fe8224; }
+  background-color: #ffa500; }
+
+.btn_box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 150px;
+  margin: 0 auto; }
 
 .overlay {
   display: none;
@@ -184,6 +193,7 @@ table {
   bottom: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(53, 53, 53, 0.3); }
+  background-color: rgba(53, 53, 53, 0.3);
+  z-index: 5; }
 
 /*# sourceMappingURL=style.css.map */

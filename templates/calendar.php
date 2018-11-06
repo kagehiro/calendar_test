@@ -68,9 +68,13 @@ $newCalendar = new CalendarObj();
     <span class="modal_date">
       <?php echo $newCalendar->getYear(); ?>年
       <?php echo $newCalendar->getMonth(); ?>月
-      <?php echo $newCalendar->getDay(); ?>日
+      <span class="n_push">_</span>日
     </span>
     <textarea class="modal_text" name="memo_area" placeholder="ここに予定を書く"></textarea>
+    <div class="btn_box">
+      <button type="button" name="save">保存</button>
+      <button type="button" name="delete" id="delete_btn">削除</button>
+    </div>
   </div>
 
 

@@ -28,11 +28,23 @@ function toDateShow() {
 window.onload = toDateShow;
 
 
+// hoverInの処理
+var hoverIn = function() {
+    $(this).children('span').attr( 'id', 'this_date' );
+    $('#this_date').html();
+}
+// hoverOutの処理
+var hoverOut = function() {
+    $(this).children('span').removeAttr( 'id' );
+}
+$('.modal_btn').hover(hoverIn, hoverOut);
 
-//モーダルで表示するメモ
+
+//モーダル関連の機能
 $('.modal_btn').on('click', function(){
   $('#overlay').fadeIn();
   $('#modal').fadeIn();
+  $('.n_push').html($('#this_date').text());　//クリックした日付の値がモーダルの”日”部分に反映される
 });
 $('.close_btn').on('click', function(){
   $('#overlay').fadeOut();
@@ -41,4 +53,10 @@ $('.close_btn').on('click', function(){
 $('#overlay').on('click', function(){
   $('#overlay').fadeOut();
   $('#modal').fadeOut();
+});
+
+
+//textarea内の文章を削除
+$('#delete_btn').on('click',function(){
+  $('.modal_text').val('');
 });

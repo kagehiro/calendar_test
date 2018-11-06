@@ -29,12 +29,12 @@ window.onload = toDateShow;
 
 
 // hoverInの処理
-var hoverIn = function() {
+let hoverIn = function() {
     $(this).children('span').attr( 'id', 'this_date' );
     $('#this_date').html();
 }
 // hoverOutの処理
-var hoverOut = function() {
+let hoverOut = function() {
     $(this).children('span').removeAttr( 'id' );
 }
 $('.modal_btn').hover(hoverIn, hoverOut);
